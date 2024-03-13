@@ -1,22 +1,40 @@
 import * as React from "react";
 import Home from './pages/Home.jsx'
+import Blog from './pages/Blog.jsx'
+import ArticleBody from './components/articles/ArticleBody.jsx'
+import ErrorPage from './pages/404.jsx'
+import '/src/index.css'
 
-import {BrowserRouter, useNavigate, Routes, Route} from 'react-router-dom';
-import {NextUIProvider} from "@nextui-org/react";
+import {NextUIProvider } from "@nextui-org/react";
+
+import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/blog",
+    element: <Blog />,
+  },
+  {
+    path: "/post/:slug",
+    element: <ArticleBody />
+  }
+]);
 
 
 
 const App = () => {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate();
 
   return (
-    <NextUIProvider navigate={navigate}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+    <NextUIProvider>
+      <RouterProvider router={router} />
     </NextUIProvider>
-   
   );
 }
 

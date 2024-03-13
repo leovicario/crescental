@@ -17,12 +17,12 @@ const Home = () => {
 
       <div className="flex">
           <div className="px-16 pt-8 pb-16 flex flex-col gap-8">
-            <h2 className="text-6xl pt-2 font-semibold tracking-tight text-gray-200">Latest insights 🐅</h2>
+            <h2 className="text-6xl pt-2  font-semibold tracking-tight text-gray-200">Latest insights 🐅</h2>
             <Divider className="mb-2"></Divider>
             <Articles />
         </div>
 
-       <Side />
+       {/* <Side /> */}
 
        </div>
        <Footer/>

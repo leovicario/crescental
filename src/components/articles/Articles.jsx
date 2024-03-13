@@ -1,5 +1,5 @@
 import React from 'react'
-import SinglePost from './SinglePost.jsx'
+import ArticleCard from './ArticleCard.jsx'
 
 import{ useState, useEffect } from "react"
 
@@ -30,12 +30,14 @@ const Articles = () => {
     .catch(console.error)
 },[]);
 
+if(!posts) return <div>Loading...</div>;
+
   return (
     <div>
     
       <div className="grid grid-cols-3 gap-8">
       {posts && posts.map((post, index) =>(
-        <SinglePost key={index} post={post}/>
+        <ArticleCard key={index} post={post}/>
       ))}
       </div>
 

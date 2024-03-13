@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900
+
+.bodoni-moda-<uniquifier> {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -26,12 +37,28 @@ a:hover {
   color: #535bf2;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.015rem;
+}
+
+html {
+  width: 100%;
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
+}
+
+main {
+  width: 100%;
 }
 
 h1 {
